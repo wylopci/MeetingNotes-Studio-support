@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MacMeetingNotes 支援、使用說明、隱私權與模型授權資訊。">
+  <title>MacMeetingNotes 支援</title>
+  <style>
+    :root { --ink:#172033; --muted:#647084; --blue:#1677ff; --bg:#f5f7fb; --card:#fff; --line:#e4e9f2; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font:16px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans CJK TC",sans-serif; }
+    header { background:linear-gradient(135deg,#0f172a,#1e3a8a); color:#fff; padding:54px 22px 42px; }
+    .wrap { max-width:980px; margin:auto; }
+    .top { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:14px; }
+    .brand-mark { width:54px; height:54px; border-radius:15px; background:#fff; display:grid; place-items:center; }
+    .brand-mark svg { width:40px; height:40px; }
+    h1 { margin:0; font-size:clamp(30px,5vw,48px); letter-spacing:-.03em; }
+    header p { margin:16px 0 0; color:#dbeafe; max-width:700px; }
+    select { border:1px solid rgba(255,255,255,.35); border-radius:10px; background:rgba(255,255,255,.14); color:#fff; padding:10px 12px; font:inherit; }
+    main { padding:28px 22px 60px; }
+    nav { display:flex; flex-wrap:wrap; gap:9px; margin:0 0 28px; }
+    nav a { color:var(--blue); background:#e8f1ff; text-decoration:none; border-radius:999px; padding:7px 14px; font-weight:600; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:0 5px 18px rgba(20,40,80,.04); }
+    section.full { grid-column:1/-1; }
+    h2 { margin:0 0 12px; font-size:23px; }
+    h3 { margin:18px 0 5px; font-size:17px; }
+    p { margin:8px 0; } ul { margin:8px 0 0; padding-left:23px; }
+    .note { background:#eef6ff; border-left:4px solid var(--blue); padding:12px 15px; border-radius:9px; margin-top:14px; }
+    .muted { color:var(--muted); }
+    footer { color:var(--muted); text-align:center; padding:24px 22px 42px; font-size:14px; }
+    a { color:var(--blue); }
+    @media (max-width:700px) { .top { align-items:flex-start; flex-direction:column; } .grid { grid-template-columns:1fr; } section.full { grid-column:auto; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="#111827" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h27c6 0 10 4 10 10v34H22c-6 0-10-4-10-10V20c0-6 2-10 6-10Z"/><path d="M12 20h8M12 31h8M12 42h8M28 30a8 8 0 0 0 16 0M32 30V20a4 4 0 0 1 8 0v10M36 38v7M30 45h12M29 51h22M29 56h22"/></svg></div>
+        <h1 data-i18n="title">MacMeetingNotes 支援</h1>
+      </div>
+      <label><span class="sr-only">Language</span><select id="lang"><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="en">English</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
+    </div>
+    <p data-i18n="tagline">離線語音轉文字，搭配你選擇的線上 AI 會議摘要。</p>
+  </div></header>
+  <main><div class="wrap">
+    <nav><a href="#start" data-i18n="navStart">快速開始</a><a href="#privacy" data-i18n="navPrivacy">隱私權</a><a href="#models" data-i18n="navModels">模型與授權</a><a href="#faq" data-i18n="navFaq">常見問題</a><a href="https://github.com/wylopci/MacMeetingNotes-support/issues" data-i18n="navContact">聯絡支援</a></nav>
+    <div class="grid">
+      <section id="start"><h2 data-i18n="startTitle">快速開始</h2><ol><li data-i18n="start1">在設定中下載需要的離線模型。</li><li data-i18n="start2">將 M4A、MP3、MP4 或其他支援的音訊／影片檔匯入，或開始新錄音。</li><li data-i18n="start3">等待逐字稿完成；需要時可按「重新辨識」。</li><li data-i18n="start4">確認逐字稿後，手動按「轉 AI 會議摘要」並選擇摘要強度。</li><li data-i18n="start5">從逐字稿或摘要分別匯出 DOCX、PDF、TXT 或 Google Docs 匯入檔。</li></ol></section>
+      <section id="privacy"><h2 data-i18n="privacyTitle">隱私權與資料處理</h2><p data-i18n="privacyText">音檔、逐字稿與摘要檔預設只儲存在你的 Mac／iCloud 指定資料夾。離線語音辨識不會上傳音檔。</p><div class="note" data-i18n="cloudNote">只有在你主動按下「轉 AI 會議摘要」時，逐字稿文字才會送到你設定的線上模型服務商。API Key 儲存在 macOS 鑰匙圈，不會寫入會議檔案或網站。</div></section>
+      <section id="models"><h2 data-i18n="modelsTitle">模型與授權</h2><p data-i18n="modelsText">離線模型由使用者在 App 內主動下載；下載前請閱讀各模型的官方授權與使用限制。</p><ul><li>Breeze-ASR-26：中文／臺語離線語音辨識，請依 <a href="https://huggingface.co/MediaTek-Research/Breeze-ASR-26">官方模型頁</a> 授權使用。</li><li>Whisper MLX：粵語、英文、日文、韓文離線語音辨識，請依 <a href="https://github.com/ml-explore/mlx-examples">MLX</a> 與模型來源授權使用。</li><li data-i18n="onlineModels">線上摘要服務（OpenAI、Anthropic、Google）受各服務商條款與隱私政策規範。</li></ul></section>
+      <section id="faq"><h2 data-i18n="faqTitle">常見問題</h2><h3 data-i18n="q1">辨識卡住怎麼辦？</h3><p data-i18n="a1">確認模型已完成下載、磁碟空間足夠，並先用短音檔測試；必要時按取消後重新辨識。</p><h3 data-i18n="q2">YouTube 聽寫需要什麼？</h3><p data-i18n="a2">功能會在預設瀏覽器播放影片並擷取系統音訊，不下載影片或字幕；請先在 macOS 隱私權與安全性中允許螢幕與系統音訊擷取。</p><h3 data-i18n="q3">如何取得協助？</h3><p data-i18n="a3">請前往 GitHub Issues，提供 macOS 版本、App 版本、使用的模型與錯誤訊息；請勿上傳含個資的音檔或逐字稿。</p></section>
+      <section class="full"><h2 data-i18n="compatTitle">系統需求</h2><p data-i18n="compatText">MacMeetingNotes 目前以 Apple Silicon Mac（M1、M2、M3、M4）為支援目標，需 macOS 14 或以上版本。離線模型下載與轉換可能需要額外磁碟空間。</p></section>
+    </div>
+  </div></main>
+  <footer><div class="wrap">MacMeetingNotes · <span data-i18n="footer">支援頁內容最後更新：2026</span></div></footer>
+  <script>
+    const t = {
+      'zh-Hant': {title:'MacMeetingNotes 支援',tagline:'離線語音轉文字，搭配你選擇的線上 AI 會議摘要。',navStart:'快速開始',navPrivacy:'隱私權',navModels:'模型與授權',navFaq:'常見問題',navContact:'聯絡支援',startTitle:'快速開始',start1:'在設定中下載需要的離線模型。',start2:'將 M4A、MP3、MP4 或其他支援的音訊／影片檔匯入，或開始新錄音。',start3:'等待逐字稿完成；需要時可按「重新辨識」。',start4:'確認逐字稿後，手動按「轉 AI 會議摘要」並選擇摘要強度。',start5:'從逐字稿或摘要分別匯出 DOCX、PDF、TXT 或 Google Docs 匯入檔。',privacyTitle:'隱私權與資料處理',privacyText:'音檔、逐字稿與摘要檔預設只儲存在你的 Mac／iCloud 指定資料夾。離線語音辨識不會上傳音檔。',cloudNote:'只有在你主動按下「轉 AI 會議摘要」時，逐字稿文字才會送到你設定的線上模型服務商。API Key 儲存在 macOS 鑰匙圈，不會寫入會議檔案或網站。',modelsTitle:'模型與授權',modelsText:'離線模型由使用者在 App 內主動下載；下載前請閱讀各模型的官方授權與使用限制。',onlineModels:'線上摘要服務（OpenAI、Anthropic、Google）受各服務商條款與隱私政策規範。',faqTitle:'常見問題',q1:'辨識卡住怎麼辦？',a1:'確認模型已完成下載、磁碟空間足夠，並先用短音檔測試；必要時按取消後重新辨識。',q2:'YouTube 聽寫需要什麼？',a2:'功能會在預設瀏覽器播放影片並擷取系統音訊，不下載影片或字幕；請先在 macOS 隱私權與安全性中允許螢幕與系統音訊擷取。',q3:'如何取得協助？',a3:'請前往 GitHub Issues，提供 macOS 版本、App 版本、使用的模型與錯誤訊息；請勿上傳含個資的音檔或逐字稿。',compatTitle:'系統需求',compatText:'MacMeetingNotes 目前以 Apple Silicon Mac（M1、M2、M3、M4）為支援目標，需 macOS 14 或以上版本。離線模型下載與轉換可能需要額外磁碟空間。',footer:'支援頁內容最後更新：2026'},
+      'zh-Hans': {title:'MacMeetingNotes 支持',tagline:'离线语音转文字，搭配你选择的在线 AI 会议摘要。',navStart:'快速开始',navPrivacy:'隐私权',navModels:'模型与授权',navFaq:'常见问题',navContact:'联系支持',startTitle:'快速开始',start1:'在设置中下载需要的离线模型。',start2:'导入 M4A、MP3、MP4 或其他支持的音频／视频文件，或开始新录音。',start3:'等待逐字稿完成；需要时可按「重新识别」。',start4:'确认逐字稿后，手动按「转 AI 会议摘要」并选择摘要强度。',start5:'从逐字稿或摘要分别导出 DOCX、PDF、TXT 或 Google Docs 导入文件。',privacyTitle:'隐私权与数据处理',privacyText:'音频、逐字稿与摘要文件默认只储存在你的 Mac／iCloud 指定文件夹。离线语音识别不会上传音频。',cloudNote:'只有在你主动按下「转 AI 会议摘要」时，逐字稿文字才会发送到你设置的在线模型服务商。API Key 储存在 macOS 钥匙串，不会写入会议文件或网站。',modelsTitle:'模型与授权',modelsText:'离线模型由用户在 App 内主动下载；下载前请阅读各模型的官方授权与使用限制。',onlineModels:'在线摘要服务（OpenAI、Anthropic、Google）受各服务商条款与隐私政策规范。',faqTitle:'常见问题',q1:'识别卡住怎么办？',a1:'确认模型已完成下载、磁盘空间足够，并先用短音频测试；必要时按取消后重新识别。',q2:'YouTube 听写需要什么？',a2:'功能会在默认浏览器播放视频并采集系统音频，不下载视频或字幕；请先在 macOS 隐私与安全性中允许屏幕与系统音频采集。',q3:'如何取得帮助？',a3:'请前往 GitHub Issues，提供 macOS 版本、App 版本、使用的模型与错误信息；请勿上传含个人信息的音频或逐字稿。',compatTitle:'系统要求',compatText:'MacMeetingNotes 目前以 Apple Silicon Mac（M1、M2、M3、M4）为支持目标，需 macOS 14 或以上版本。离线模型下载与转换可能需要额外磁盘空间。',footer:'支持页内容最后更新：2026'},
+      en: {title:'MacMeetingNotes Support',tagline:'Private offline transcription with the online AI summary service you choose.',navStart:'Get started',navPrivacy:'Privacy',navModels:'Models & licenses',navFaq:'FAQ',navContact:'Contact support',startTitle:'Get started',start1:'Download the offline models you need in Settings.',start2:'Import M4A, MP3, MP4, or another supported audio/video file, or start a new recording.',start3:'Wait for the transcript; use “Re-transcribe” when needed.',start4:'Review the transcript, then press “AI Meeting Summary” and choose a summary strength.',start5:'Export the transcript or summary separately as DOCX, PDF, TXT, or a Google Docs import file.',privacyTitle:'Privacy & data handling',privacyText:'Audio, transcripts, and summary files stay in your selected Mac/iCloud folders by default. Offline transcription does not upload audio.',cloudNote:'Transcript text is sent to your selected online model provider only after you press “AI Meeting Summary”. API keys are stored in the macOS Keychain and are not written into meeting files or this website.',modelsTitle:'Models & licenses',modelsText:'Offline models are downloaded by the user inside the app. Review each model’s official license and usage restrictions before downloading.',onlineModels:'Online summary services (OpenAI, Anthropic, and Google) are governed by their own terms and privacy policies.',faqTitle:'FAQ',q1:'What if transcription stalls?',a1:'Confirm that the model is downloaded and that you have enough disk space. Test with a short file, then cancel and re-transcribe if needed.',q2:'What does YouTube dictation require?',a2:'The app plays the video in your default browser and captures system audio. It does not download video or subtitles. Allow Screen & System Audio Recording in macOS Privacy & Security.',q3:'How do I get help?',a3:'Open GitHub Issues with your macOS version, app version, model, and error message. Do not upload personal audio or transcripts.',compatTitle:'System requirements',compatText:'MacMeetingNotes currently targets Apple Silicon Macs (M1, M2, M3, and M4) running macOS 14 or later. Model downloads and conversion may require additional disk space.',footer:'Support page last updated: 2026'},
+      ja: {title:'MacMeetingNotes サポート',tagline:'オフライン音声文字起こしと、選択したオンライン AI 会議要約。',navStart:'はじめに',navPrivacy:'プライバシー',navModels:'モデルとライセンス',navFaq:'よくある質問',navContact:'サポートに連絡',startTitle:'はじめに',start1:'設定で必要なオフラインモデルをダウンロードします。',start2:'M4A、MP3、MP4 などの対応ファイルを読み込むか、新しい録音を開始します。',start3:'文字起こしの完了を待ち、必要に応じて「再認識」を押します。',start4:'文字起こしを確認し、「AI 会議要約」を押して強度を選びます。',start5:'文字起こしと要約を DOCX、PDF、TXT、Google Docs 用ファイルとして個別に書き出せます。',privacyTitle:'プライバシーとデータ処理',privacyText:'音声、文字起こし、要約ファイルは通常、選択した Mac／iCloud フォルダに保存されます。オフライン認識で音声がアップロードされることはありません。',cloudNote:'「AI 会議要約」を押した場合のみ、文字起こしテキストが選択したオンラインモデルサービスへ送信されます。API キーは macOS キーチェーンに保存されます。',modelsTitle:'モデルとライセンス',modelsText:'オフラインモデルはアプリ内でユーザーがダウンロードします。ダウンロード前に各モデルの公式ライセンスを確認してください。',onlineModels:'オンライン要約サービスは各社の利用規約とプライバシーポリシーに従います。',faqTitle:'よくある質問',q1:'認識が止まった場合は？',a1:'モデルのダウンロードと空き容量を確認し、短いファイルで試してください。必要ならキャンセルして再認識します。',q2:'YouTube 文字起こしに必要なものは？',a2:'既定のブラウザで動画を再生し、システム音声を取得します。動画や字幕はダウンロードしません。macOS の画面とシステム音声の収録を許可してください。',q3:'サポートを受けるには？',a3:'GitHub Issues に macOS、アプリ、モデル、エラーを記載してください。個人情報を含む音声や文字起こしはアップロードしないでください。',compatTitle:'システム要件',compatText:'Apple Silicon（M1、M2、M3、M4）搭載の macOS 14 以降を対象としています。モデルのダウンロードと変換には追加の空き容量が必要です。',footer:'最終更新：2026'},
+      ko: {title:'MacMeetingNotes 지원',tagline:'오프라인 음성 인식과 선택한 온라인 AI 회의 요약을 제공합니다.',navStart:'시작하기',navPrivacy:'개인정보 보호',navModels:'모델 및 라이선스',navFaq:'자주 묻는 질문',navContact:'지원 문의',startTitle:'시작하기',start1:'설정에서 필요한 오프라인 모델을 다운로드합니다.',start2:'M4A, MP3, MP4 등 지원되는 파일을 가져오거나 새 녹음을 시작합니다.',start3:'전사를 기다리고 필요하면 “다시 인식”을 누릅니다.',start4:'전사를 확인한 뒤 “AI 회의 요약”을 누르고 요약 강도를 선택합니다.',start5:'전사와 요약을 DOCX, PDF, TXT 또는 Google Docs 가져오기 파일로 각각 내보낼 수 있습니다.',privacyTitle:'개인정보 및 데이터 처리',privacyText:'오디오, 전사 및 요약 파일은 기본적으로 선택한 Mac／iCloud 폴더에 저장됩니다. 오프라인 전사에서는 오디오를 업로드하지 않습니다.',cloudNote:'“AI 회의 요약”을 누른 경우에만 전사 텍스트가 선택한 온라인 모델 제공업체로 전송됩니다. API Key는 macOS 키체인에 저장되며 회의 파일이나 웹사이트에 기록되지 않습니다.',modelsTitle:'모델 및 라이선스',modelsText:'오프라인 모델은 앱에서 사용자가 직접 다운로드합니다. 다운로드 전에 각 모델의 공식 라이선스와 사용 제한을 확인하세요.',onlineModels:'온라인 요약 서비스는 각 제공업체의 약관 및 개인정보 처리방침을 따릅니다.',faqTitle:'자주 묻는 질문',q1:'전사가 멈추면 어떻게 하나요?',a1:'모델 다운로드와 디스크 여유 공간을 확인하고 짧은 파일로 테스트하세요. 필요하면 취소 후 다시 인식합니다.',q2:'YouTube 받아쓰기에 필요한 것은?',a2:'기본 브라우저에서 영상을 재생하고 시스템 오디오를 캡처합니다. 영상이나 자막은 다운로드하지 않습니다. macOS에서 화면 및 시스템 오디오 녹음을 허용하세요.',q3:'도움을 받으려면?',a3:'GitHub Issues에 macOS, 앱 버전, 모델 및 오류 메시지를 남겨 주세요. 개인정보가 포함된 오디오나 전사는 업로드하지 마세요.',compatTitle:'시스템 요구 사항',compatText:'Apple Silicon(M1, M2, M3, M4) Mac과 macOS 14 이상을 지원합니다. 모델 다운로드 및 변환에는 추가 디스크 공간이 필요할 수 있습니다.',footer:'최종 업데이트: 2026'}
+    };
+    const lang = document.querySelector('#lang');
+    function applyLanguage(code) { const d=t[code]||t.en; document.documentElement.lang=code; document.querySelectorAll('[data-i18n]').forEach(e=>{if(d[e.dataset.i18n]) e.textContent=d[e.dataset.i18n];}); }
+    lang.addEventListener('change',()=>applyLanguage(lang.value)); applyLanguage(lang.value);
+  </script>
+</body>
+</html>
