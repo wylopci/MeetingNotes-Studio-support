@@ -65,8 +65,11 @@
       ko: {title:'MacMeetingNotes 지원',tagline:'오프라인 음성 인식과 선택한 온라인 AI 회의 요약을 제공합니다.',navStart:'시작하기',navPrivacy:'개인정보 보호',navModels:'모델 및 라이선스',navFaq:'자주 묻는 질문',navContact:'지원 문의',startTitle:'시작하기',start1:'설정에서 필요한 오프라인 모델을 다운로드합니다.',start2:'M4A, MP3, MP4 등 지원되는 파일을 가져오거나 새 녹음을 시작합니다.',start3:'전사를 기다리고 필요하면 “다시 인식”을 누릅니다.',start4:'전사를 확인한 뒤 “AI 회의 요약”을 누르고 요약 강도를 선택합니다.',start5:'전사와 요약을 DOCX, PDF, TXT 또는 Google Docs 가져오기 파일로 각각 내보낼 수 있습니다.',privacyTitle:'개인정보 및 데이터 처리',privacyText:'오디오, 전사 및 요약 파일은 기본적으로 선택한 Mac／iCloud 폴더에 저장됩니다. 오프라인 전사에서는 오디오를 업로드하지 않습니다.',cloudNote:'“AI 회의 요약”을 누른 경우에만 전사 텍스트가 선택한 온라인 모델 제공업체로 전송됩니다. API Key는 macOS 키체인에 저장되며 회의 파일이나 웹사이트에 기록되지 않습니다.',modelsTitle:'모델 및 라이선스',modelsText:'오프라인 모델은 앱에서 사용자가 직접 다운로드합니다. 다운로드 전에 각 모델의 공식 라이선스와 사용 제한을 확인하세요.',onlineModels:'온라인 요약 서비스는 각 제공업체의 약관 및 개인정보 처리방침을 따릅니다.',faqTitle:'자주 묻는 질문',q1:'전사가 멈추면 어떻게 하나요?',a1:'모델 다운로드와 디스크 여유 공간을 확인하고 짧은 파일로 테스트하세요. 필요하면 취소 후 다시 인식합니다.',q2:'YouTube 받아쓰기에 필요한 것은?',a2:'기본 브라우저에서 영상을 재생하고 시스템 오디오를 캡처합니다. 영상이나 자막은 다운로드하지 않습니다. macOS에서 화면 및 시스템 오디오 녹음을 허용하세요.',q3:'도움을 받으려면?',a3:'GitHub Issues에 macOS, 앱 버전, 모델 및 오류 메시지를 남겨 주세요. 개인정보가 포함된 오디오나 전사는 업로드하지 마세요.',compatTitle:'시스템 요구 사항',compatText:'Apple Silicon(M1, M2, M3, M4) Mac과 macOS 14 이상을 지원합니다. 모델 다운로드 및 변환에는 추가 디스크 공간이 필요할 수 있습니다.',footer:'최종 업데이트: 2026'}
     };
     const lang = document.querySelector('#lang');
-    function applyLanguage(code) { const d=t[code]||t.en; document.documentElement.lang=code; document.querySelectorAll('[data-i18n]').forEach(e=>{if(d[e.dataset.i18n]) e.textContent=d[e.dataset.i18n];}); }
-    lang.addEventListener('change',()=>applyLanguage(lang.value)); applyLanguage(lang.value);
+    function applyLanguage(code) { const d=t[code]||t.en; lang.value=t[code]?code:'en'; document.documentElement.lang=code; document.querySelectorAll('[data-i18n]').forEach(e=>{if(d[e.dataset.i18n]) e.textContent=d[e.dataset.i18n];}); }
+    const requestedLang=new URLSearchParams(location.search).get('lang');
+    const browserLang=(navigator.language||'').toLowerCase();
+    const detectedLang=requestedLang||({ 'zh-tw':'zh-Hant','zh-hk':'zh-Hant','zh-cn':'zh-Hans','zh-sg':'zh-Hans','ja':'ja','ko':'ko' }[browserLang]|| (browserLang.startsWith('zh')?(browserLang.includes('cn')?'zh-Hans':'zh-Hant'):browserLang.startsWith('ja')?'ja':browserLang.startsWith('ko')?'ko':'en'));
+    lang.addEventListener('change',()=>{ applyLanguage(lang.value); history.replaceState(null,'',`?lang=${encodeURIComponent(lang.value)}`); }); applyLanguage(detectedLang);
   </script>
 </body>
 </html>
