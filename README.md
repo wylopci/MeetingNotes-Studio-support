@@ -1,2 +1,2 @@
-# MacMeetingNotes-support
-MacMeetingNotes support, usage guide, privacy, and model license information.
+# MeetingNotes-Studio-support
+MeetingNotes Studio support, usage guide, privacy, and model license information.
